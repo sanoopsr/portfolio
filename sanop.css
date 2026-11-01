@@ -65,7 +65,7 @@ header p {
 .social-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    gap: 12px;
 }
 
 .social-btn {
@@ -74,6 +74,29 @@ header p {
     justify-content: center;
     gap: 8px;
     color: white;
+    padding: 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.social-btn:hover {
+    transform: scale(1.03);
+    opacity: 0.9;
+}
+
+/* Brand Colors for Apps */
+.instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+.whatsapp { background-color: #25d366; }
+.github { background-color: #24292e; }
+.linkedin { background-color: #0a66c2; }
+
+footer {
+    text-align: center;
     padding: 10px;
-    border-radius:
+    color: #64748b;
+    font-size: 0.85rem;
+    margin-top: 20px;
 }
