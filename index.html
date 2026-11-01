@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanoop S R | BCA Portfolio</title>
+    <title>Sanoop S R | Portfolio</title>
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- CSS File Link -->
@@ -11,86 +11,58 @@
 </head>
 <body>
 
-    <!-- Header Section -->
-    <header>
-        <div class="container">
+    <!-- Main Container -->
+    <div class="container">
+
+        <!-- Header Section -->
+        <header>
             <h1>Sanoop S R</h1>
             <p>BCA Student & Tech Enthusiast</p>
-            
-            <!-- Navigation Menu -->
-            <nav>
-                <a href="#about" onclick="showSection('about')"><i class="fa-solid fa-user"></i> About Me</a>
-                <a href="#notes" onclick="showSection('notes')"><i class="fa-solid fa-book"></i> Notes</a>
-                <a href="#contact" onclick="showSection('contact')"><i class="fa-solid fa-envelope"></i> Contact</a>
-            </nav>
-        </div>
-    </header>
+        </header>
 
-    <!-- Main Content Sections -->
-    <main class="container">
-        
-        <!-- About Section -->
-        <section id="about" class="page-section">
-            <div class="card">
-                <h2><i class="fa-solid fa-circle-user"></i> About Me</h2>
-                <p>Hello! I am Sanoop S R, a BCA student at CHMM College. I am currently learning front-end web development, C, C++, Python, and Cyber Security.</p>
+        <!-- About Me Section -->
+        <section class="card">
+            <h2><i class="fa-solid fa-user"></i> About Me</h2>
+            <p>Hello! I am Sanoop S R, a BCA student learning web development and programming.</p>
+        </section>
+
+        <!-- Languages / Skills Section -->
+        <section class="card">
+            <h2><i class="fa-solid fa-code"></i> Languages Learned</h2>
+            <div class="skills-list">
+                <span class="skill-tag">HTML</span>
+                <span class="skill-tag">CSS</span>
+                <span class="skill-tag">C</span>
+                <span class="skill-tag">C++</span>
+                <span class="skill-tag">SQL</span>
             </div>
         </section>
 
-        <!-- Notes Section -->
-        <section id="notes" class="page-section" style="display: none;">
-            <div class="card">
-                <h2><i class="fa-solid fa-folder-open"></i> BCA Study Notes</h2>
-                <p>Select a subject to view the respective study notes and materials:</p>
-                
-                <div class="notes-list">
-                    <div class="note-item">
-                        <h3><i class="fa-solid fa-shield-halved"></i> Cyber Security Notes</h3>
-                        <p>Core concepts, fundamentals, and security protocols.</p>
-                        <a href="#" class="btn-small">View Notes</a>
-                    </div>
-                    <div class="note-item">
-                        <h3><i class="fa-solid fa-database"></i> SQL Notes</h3>
-                        <p>Database queries, sorting, and table management.</p>
-                        <a href="#" class="btn-small">View Notes</a>
-                    </div>
-                </div>
+        <!-- Follow Us / Contact Section -->
+        <section class="card">
+            <h2><i class="fa-solid fa-share-nodes"></i> Follow Us / Contact</h2>
+            <div class="social-grid">
+                <a href="https://instagram.com/sanoopeeee" target="_blank" class="social-btn instagram">
+                    <i class="fa-brands fa-instagram"></i> Instagram
+                </a>
+                <a href="https://wa.me/" target="_blank" class="social-btn whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="https://github.com/sanoopsr" target="_blank" class="social-btn github">
+                    <i class="fa-brands fa-github"></i> GitHub
+                </a>
+                <a href="https://linkedin.com" target="_blank" class="social-btn linkedin">
+                    <i class="fa-brands fa-linkedin"></i> LinkedIn
+                </a>
             </div>
         </section>
 
-        <!-- Social Links / Contact Section -->
-        <section id="contact" class="page-section" style="display: none;">
-            <div class="card">
-                <h2><i class="fa-solid fa-share-nodes"></i> Connect With Me</h2>
-                <div class="social-icons">
-                    <a href="https://instagram.com/sanoopeeee" target="_blank" class="instagram"><i class="fa-brands fa-instagram"></i> Instagram</a>
-                    <a href="https://linkedin.com" target="_blank" class="linkedin"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-                    <a href="https://github.com/sanoopsr" target="_blank" class="github"><i class="fa-brands fa-github"></i> GitHub</a>
-                </div>
-            </div>
-        </section>
+        <!-- Footer Section -->
+        <footer>
+            <p>&copy; 2026 Sanoop S R. All Rights Reserved.</p>
+        </footer>
 
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Sanoop S R. All Rights Reserved.</p>
-    </footer>
-
-    <!-- Simple JavaScript to toggle sections -->
-    <script>
-        function showSection(sectionId) {
-            const sections = document.querySelectorAll('.page-section');
-            sections.forEach(sec => {
-                sec.style.display = 'none';
-            });
-            document.getElementById(sectionId).style.display = 'block';
-        }
-        // Show default section on load
-        window.onload = function() {
-            showSection('about');
-        }
-    </script>
+    </div>
 
 </body>
 </html>
