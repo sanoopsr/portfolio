@@ -19,36 +19,54 @@
             
             <!-- Navigation Menu -->
             <nav>
-                <a href="#about"><i class="fa-solid fa-user"></i> About Me</a>
-                <a href="#notes"><i class="fa-solid fa-book"></i> Notes</a>
-                <a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
+                <a href="#about" onclick="showSection('about')"><i class="fa-solid fa-user"></i> About Me</a>
+                <a href="#notes" onclick="showSection('notes')"><i class="fa-solid fa-book"></i> Notes</a>
+                <a href="#contact" onclick="showSection('contact')"><i class="fa-solid fa-envelope"></i> Contact</a>
             </nav>
         </div>
     </header>
 
-    <!-- Main Content -->
+    <!-- Main Content Sections -->
     <main class="container">
         
         <!-- About Section -->
-        <section id="about" class="card">
-            <h2><i class="fa-solid fa-circle-user"></i> About Me</h2>
-            <p>Hello! I am Sanoop S R, a BCA student at CHMM College. I am currently learning front-end web development and programming.</p>
+        <section id="about" class="page-section">
+            <div class="card">
+                <h2><i class="fa-solid fa-circle-user"></i> About Me</h2>
+                <p>Hello! I am Sanoop S R, a BCA student at CHMM College. I am currently learning front-end web development, C, C++, Python, and Cyber Security.</p>
+            </div>
         </section>
 
         <!-- Notes Section -->
-        <section id="notes" class="card">
-            <h2><i class="fa-solid fa-folder-open"></i> BCA Study Notes</h2>
-            <p>You can check out my semester study notes and programming codes from the link below.</p>
-            <a href="#" class="btn"><i class="fa-solid fa-download"></i> Download Notes</a>
+        <section id="notes" class="page-section" style="display: none;">
+            <div class="card">
+                <h2><i class="fa-solid fa-folder-open"></i> BCA Study Notes</h2>
+                <p>Select a subject to view the respective study notes and materials:</p>
+                
+                <div class="notes-list">
+                    <div class="note-item">
+                        <h3><i class="fa-solid fa-shield-halved"></i> Cyber Security Notes</h3>
+                        <p>Core concepts, fundamentals, and security protocols.</p>
+                        <a href="#" class="btn-small">View Notes</a>
+                    </div>
+                    <div class="note-item">
+                        <h3><i class="fa-solid fa-database"></i> SQL Notes</h3>
+                        <p>Database queries, sorting, and table management.</p>
+                        <a href="#" class="btn-small">View Notes</a>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <!-- Social Links Section -->
-        <section id="contact" class="card">
-            <h2><i class="fa-solid fa-share-nodes"></i> Connect With Me</h2>
-            <div class="social-icons">
-                <a href="https://instagram.com/sanoopeeee" target="_blank" class="instagram"><i class="fa-brands fa-instagram"></i> Instagram</a>
-                <a href="https://linkedin.com" target="_blank" class="linkedin"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-                <a href="https://github.com/sanoopsr" target="_blank" class="github"><i class="fa-brands fa-github"></i> GitHub</a>
+        <!-- Social Links / Contact Section -->
+        <section id="contact" class="page-section" style="display: none;">
+            <div class="card">
+                <h2><i class="fa-solid fa-share-nodes"></i> Connect With Me</h2>
+                <div class="social-icons">
+                    <a href="https://instagram.com/sanoopeeee" target="_blank" class="instagram"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                    <a href="https://linkedin.com" target="_blank" class="linkedin"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://github.com/sanoopsr" target="_blank" class="github"><i class="fa-brands fa-github"></i> GitHub</a>
+                </div>
             </div>
         </section>
 
@@ -59,6 +77,20 @@
         <p>&copy; 2026 Sanoop S R. All Rights Reserved.</p>
     </footer>
 
+    <!-- Simple JavaScript to toggle sections -->
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.page-section');
+            sections.forEach(sec => {
+                sec.style.display = 'none';
+            });
+            document.getElementById(sectionId).style.display = 'block';
+        }
+        // Show default section on load
+        window.onload = function() {
+            showSection('about');
+        }
+    </script>
+
 </body>
 </html>
-
