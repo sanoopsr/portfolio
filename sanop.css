@@ -1,7 +1,7 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    color: #333;
+    color: #FFFF00;
     margin: 0;
     padding: 20px;
     text-align: center;
@@ -105,6 +105,6 @@ a {
 
 footer {
     margin-top: 40px;
-    color: #4b5563;
+    color: #FFA500;
     font-size: 14px;
 }
