@@ -15,7 +15,6 @@
 
         <!-- Header Section -->
         <header>
-            
             <h1>Sanoop S R</h1>
             <p>BCA Student & Tech Enthusiast</p>
         </header>
@@ -36,12 +35,18 @@
             </div>
         </section>
 
-        <!-- Project Section -->
+        <!-- Project Section with Toggle Button -->
         <section class="card">
-            <h2><i class="fa-solid fa-laptop-code"></i> My Projects</h2>
-            <p>Projects content goes here...</p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h2><i class="fa-solid fa-laptop-code"></i> My Projects</h2>
+                <!-- Click Button -->
+                <button onclick="toggleProject()" style="background-color: #38bdf8; color: #ffffff; border: none; padding: 6px 14px; border-radius: 6px; font-size: 0.9rem; font-weight: bold; cursor: pointer;">Click</button>
+            </div>
+            <!-- ഇത് ആദ്യം കാണില്ല, Click ചെയ്യുമ്പോൾ മാത്രം 'A' എന്ന് കാണിക്കും -->
+            <div id="project-details" style="display: none; margin-top: 15px; padding-top: 10px; border-top: 1px solid #cbd5e1;">
+                <p style="font-size: 1.2rem; font-weight: bold; color: #0284c7;">A</p>
+            </div>
         </section>
-
 
         <!-- Follow Us / Contact Section -->
         <section class="card">
@@ -57,7 +62,7 @@
                     <i class="fa-brands fa-github"></i> GitHub
                 </a>
                 <a href="mailto:sanoopsr009@gmail.com" class="social-btn email">
-                    <i class="fa-solid fa-envelope"></i> Email
+                    <i class="fa-solid-envelope"></i> Email
                 </a>
                 <a href="https://t.me/9744531539" target="_blank" class="social-btn telegram">
                     <i class="fa-brands fa-telegram"></i> Telegram
@@ -74,5 +79,17 @@
         </footer>
 
     </div>
+
+    <!-- JavaScript കോഡ്: Click ചെയ്യുമ്പോൾ 'A' കാണിക്കാൻ വേണ്ടി -->
+    <script>
+        function toggleProject() {
+            var x = document.getElementById("project-details");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
