@@ -39,32 +39,31 @@
         <section class="card">
             <div style="display: flex; justify-content: space-between; align-items: center;">
                 <h2><i class="fa-solid fa-laptop-code"></i> My Projects</h2>
-                <!-- id="project-btn" ഇവിടെ ആഡ് ചെയ്തിട്ടുണ്ട് -->
                 <button id="project-btn" onclick="toggleProject()" style="background-color: #38bdf8; color: #ffffff; border: none; padding: 6px 14px; border-radius: 6px; font-size: 0.9rem; font-weight: bold; cursor: pointer;">Open</button>
             </div>
-            
+
             <div id="project-details" style="display: none; margin-top: 15px; padding-top: 10px; border-top: 1px solid #cbd5e1;">
                 <p style="font-size: 0.9rem; font-weight: normal; color: black;"> 
                     <i>The project has not been done yet. It will be uploaded to the page when it is done.</i> 
                 </p>
             </div>
         </section>
+
         <!-- AI Assistant Section -->
         <section class="card">
             <h2><i class="fa-solid fa-robot"></i> Ask AI about me</h2>
-            <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 10px;">എന്നെക്കുറിച്ചോ എൻ്റെ പ്രൊജക്റ്റുകളെക്കുറിച്ചോ എട്ടിൽ ചോദിക്കൂ!</p>
-            
+            <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 10px;">എന്നെക്കുറിച്ചോ എൻ്റെ പ്രൊജക്റ്റുകളെക്കുറിച്ചോ ഇതിൽ ചോദിക്കൂ!</p>
+
             <div style="display: flex; gap: 8px; margin-bottom: 10px;">
                 <input type="text" id="ai-input" placeholder="Ask something..." style="flex: 1; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.9rem;">
                 <button onclick="askGeminiAI()" style="background-color: #38bdf8; color: #ffffff; border: none; padding: 10px 16px; border-radius: 6px; font-weight: bold; cursor: pointer;">Ask</button>
             </div>
-            
+
             <!-- AI മറുപടി കാണിക്കുന്ന സ്ഥലം -->
             <div id="ai-response" style="background-color: #f1f5f9; padding: 10px; border-radius: 6px; font-size: 0.9rem; color: #334155; display: none;"></div>
         </section>
 
-
-                <!-- Follow Us / Contact Section -->
+        <!-- Follow Us / Contact Section -->
         <section class="card">
             <h2><i class="fa-solid fa-share-nodes"></i> Follow Us / Contact</h2>
             <div class="social-grid" style="grid-template-columns: repeat(3, 1fr);">
@@ -80,7 +79,7 @@
                 <a href="mailto:sanoopsr009@gmail.com" class="social-btn email" title="Email">
                     <i class="fa-solid fa-envelope fa-lg"></i>
                 </a>
-                <a href="https://t.me/+919744531539"target="_blank" class="social-btn telegram" title="Telegram">
+                <a href="https://t.me/+919744531539" target="_blank" class="social-btn telegram" title="Telegram">
                     <i class="fa-brands fa-telegram fa-lg"></i>
                 </a>
                 <a href="https://linkedin.com" target="_blank" class="social-btn linkedin" title="LinkedIn">
@@ -89,16 +88,41 @@
             </div>
         </section>
 
+        <!-- Get in Touch / Message Section -->
+        <section class="card">
+            <h2><i class="fa-solid fa-envelope"></i> Get in Touch</h2>
+            <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 15px;">Have any questions? Feel free to drop a message below:</p>
 
-        
+            <form id="contact-form" action="https://formspree.io/f/myeebrnd" method="POST">
+                <!-- ചോദ്യം അല്ലെങ്കിൽ മെസ്സേജ് ടൈപ്പ് ചെയ്യാനുള്ള ബോക്സ് -->
+                <div style="margin-bottom: 10px;">
+                    <textarea name="message" id="msg-input" placeholder="Type your question here..." required style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; height: 90px; font-size: 0.9rem;"></textarea>
+                </div>
 
-           <!-- JavaScript Code -->
+                <!-- സെൻഡ് ബട്ടൺ -->
+                <button type="submit" style="background-color: #38bdf8; color: #ffffff; border: none; padding: 10px 16px; border-radius: 6px; font-weight: bold; cursor: pointer; width: 100%;">
+                    Send Message
+                </button>
+            </form>
+
+            <!-- സന്ദേശം അയച്ചുകഴിഞ്ഞാൽ കാണിക്കുന്ന നോട്ടിഫിക്കേഷൻ -->
+            <div id="form-status" style="margin-top: 10px; font-size: 0.9rem; font-weight: bold; text-align: center; display: none;"></div>
+        </section>
+
+        <!-- Footer Section -->
+        <footer>
+            <p>&copy; 2026 Sanoop S R. All Rights Reserved.</p>
+        </footer>
+
+    </div>
+
+    <!-- JavaScript Code (Combined for Project, AI, and Contact Form) -->
     <script>
-        // Project Toggle Function
+        // 1. Project Toggle Function
         function toggleProject() {
             var details = document.getElementById("project-details");
             var btn = document.getElementById("project-btn");
-            
+
             if (details.style.display === "none") {
                 details.style.display = "block";
                 btn.innerText = "Close";
@@ -110,7 +134,7 @@
             }
         }
 
-        // Gemini AI Integration Function (Split API Key method)
+        // 2. Gemini AI Integration Function (Split API Key method)
         async function askGeminiAI() {
             const userInput = document.getElementById("ai-input").value;
             const responseDiv = document.getElementById("ai-response");
@@ -123,7 +147,6 @@
             responseDiv.style.display = "block";
             responseDiv.innerText = "Thinking...";
 
-            // API Key split cheythu nalkiyirikkunnu (GitHub block cheyyathirarikkan)
             const part1 = "AQ.Ab8RN6JwnMJhYwKGT8wgoib15zSILDH";
             const part2 = "JVRvc600LhrapqisgQ";
             const apiKey = part1 + part2;
@@ -146,88 +169,56 @@
                 });
 
                 const data = await response.json();
-                const aiReply = data.candidates[0].content.parts[0].text;
-                responseDiv.innerText = aiReply;
+                
+                if (data.candidates && data.candidates.length > 0) {
+                    const aiReply = data.candidates[0].content.parts[0].text;
+                    responseDiv.innerText = aiReply;
+                } else {
+                    responseDiv.innerText = "Sorry, I couldn't get a response right now. Please try again.";
+                }
             } catch (error) {
                 responseDiv.innerText = "Sorry, unable to connect right now. Please try again.";
             }
         }
-    </script>
 
-                        <!-- Contact & Message Section -->
-        <section class="card">
-            <h2><i class="fa-solid fa-envelope"></i> Get in Touch</h2>
-            <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 15px;">Have any questions? Feel free to drop a message below:</p>
-            
-            <form id="contact-form" action="https://formspree.io/f/myeebrnd" method="POST">
-                <!-- ചോദ്യം അല്ലെങ്കിൽ മെസ്സേജ് ടൈപ്പ് ചെയ്യാനുള്ള ബോക്സ് -->
-                <div style="margin-bottom: 10px;">
-                    <textarea name="message" id="msg-input" placeholder="Type your question here..." required style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; height: 90px; font-size: 0.9rem;"></textarea>
-                </div>
-                
-                <!-- സെൻഡ് ബട്ടൺ -->
-                <button type="submit" style="background-color: #38bdf8; color: #ffffff; border: none; padding: 10px 16px; border-radius: 6px; font-weight: bold; cursor: pointer; width: 100%;">
-                    Send Message
-                </button>
-            </form>
-            
-            <!-- സന്ദേശം അയച്ചുകഴിഞ്ഞാൽ കാണിക്കുന്ന ചെറിയ നോട്ടിഫിക്കേഷൻ -->
-            <div id="form-status" style="margin-top: 10px; font-size: 0.9rem; font-weight: bold; text-align: center; display: none;"></div>
-        </section>
+        // 3. Contact Form Submission without leaving page
+        var form = document.getElementById("contact-form");
 
-        <!-- JavaScript to handle form submission without leaving the page -->
-        <script>
-            var form = document.getElementById("contact-form");
-            
-            async function handleSubmit(event) {
-                event.preventDefault();
-                var status = document.getElementById("form-status");
-                var data = new FormData(event.target);
-                
-                fetch(event.target.action, {
-                    method: form.method,
-                    body: data,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                }).then(response => {
-                    if (response.ok) {
-                        status.style.display = "block";
-                        status.style.color = "#22c55e";
-                        status.innerText = "Message sent successfully!";
-                        form.reset();
-                        setTimeout(() => {
-                            status.style.display = "none";
-                        }, 4000);
-                    } else {
-                        response.json().then(data => {
-                            status.style.display = "block";
-                            status.style.color = "#ef4444";
-                            status.innerText = "Oops! There was a problem submitting your form";
-                        })
-                    }
-                }).catch(error => {
+        async function handleSubmit(event) {
+            event.preventDefault();
+            var status = document.getElementById("form-status");
+            var data = new FormData(event.target);
+
+            fetch(event.target.action, {
+                method: form.method,
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
                     status.style.display = "block";
-                    status.style.color = "#ef4444";
-                    status.innerText = "Oops! There was a problem submitting your form";
-                });
-            }
-            
-            form.addEventListener("submit", handleSubmit);
-        </script>
+                    status.style.color = "#22c55e";
+                    status.innerText = "Message sent successfully!";
+                    form.reset();
+                    setTimeout(() => {
+                        status.style.display = "none";
+                    }, 4000);
+                } else {
+                    response.json().then(data => {
+                        status.style.display = "block";
+                        status.style.color = "#ef4444";
+                        status.innerText = "Oops! There was a problem submitting your form";
+                    });
+                }
+            }).catch(error => {
+                status.style.display = "block";
+                status.style.color = "#ef4444";
+                status.innerText = "Oops! There was a problem submitting your form";
+            });
+        }
 
-
-        <!-- Footer Section -->
-        <footer>
-            <p>&copy; 2026 Sanoop S R. All Rights Reserved.</p>
-        </footer>
-
-    </div>
-
-
-
-
-
-
+        form.addEventListener("submit", handleSubmit);
+    </script>
 </body>
 </html>
