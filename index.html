@@ -88,21 +88,29 @@
             </div>
         </section>
 
-        <!-- Get in Touch / Message Section (Without Email Box) -->
+        <!-- Get in Touch / Message Section (With Email Input Box) -->
         <section class="card">
             <h2><i class="fa-solid fa-envelope"></i> Get in Touch</h2>
             <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 15px;">Have any questions? Feel free to drop a message below:</p>
 
             <form id="contact-form" action="https://formspree.io/f/myeebrnd" method="POST">
+                <!-- സന്ദർശകരുടെ ഇമെയിൽ ടൈപ്പ് ചെയ്യാനുള്ള ബോക്സ് -->
                 <div style="margin-bottom: 10px;">
-                    <textarea name="message" id="msg-input" placeholder="Type your question here (you can also mention your name/contact)..." required style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; height: 90px; font-size: 0.9rem;"></textarea>
+                    <input type="email" name="email" placeholder="Your Email Address" required style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.9rem;">
                 </div>
 
+                <!-- സന്ദേശം ടൈപ്പ് ചെയ്യാനുള്ള ബോക്സ് -->
+                <div style="margin-bottom: 10px;">
+                    <textarea name="message" id="msg-input" placeholder="Type your question or message here..." required style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; height: 90px; font-size: 0.9rem;"></textarea>
+                </div>
+
+                <!-- സെൻഡ് ബട്ടൺ -->
                 <button type="submit" style="background-color: #38bdf8; color: #ffffff; border: none; padding: 10px 16px; border-radius: 6px; font-weight: bold; cursor: pointer; width: 100%;">
                     Send Message
                 </button>
             </form>
 
+            <!-- സന്ദേശം അയച്ചുകഴിഞ്ഞാൽ കാണിക്കുന്ന നോട്ടിഫിക്കേഷൻ -->
             <div id="form-status" style="margin-top: 10px; font-size: 0.9rem; font-weight: bold; text-align: center; display: none;"></div>
         </section>
 
