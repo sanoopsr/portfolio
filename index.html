@@ -49,6 +49,20 @@
                 </p>
             </div>
         </section>
+        <!-- AI Assistant Section -->
+        <section class="card">
+            <h2><i class="fa-solid fa-robot"></i> Ask AI about me</h2>
+            <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 10px;">എന്നെക്കുറിച്ചോ എൻ്റെ പ്രൊജക്റ്റുകളെക്കുറിച്ചോ എട്ടിൽ ചോദിക്കൂ!</p>
+            
+            <div style="display: flex; gap: 8px; margin-bottom: 10px;">
+                <input type="text" id="ai-input" placeholder="Ask something..." style="flex: 1; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.9rem;">
+                <button onclick="askGeminiAI()" style="background-color: #38bdf8; color: #ffffff; border: none; padding: 10px 16px; border-radius: 6px; font-weight: bold; cursor: pointer;">Ask</button>
+            </div>
+            
+            <!-- AI മറുപടി കാണിക്കുന്ന സ്ഥലം -->
+            <div id="ai-response" style="background-color: #f1f5f9; padding: 10px; border-radius: 6px; font-size: 0.9rem; color: #334155; display: none;"></div>
+        </section>
+
 
                 <!-- Follow Us / Contact Section -->
         <section class="card">
