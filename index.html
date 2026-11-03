@@ -49,13 +49,13 @@
             </div>
         </section>
 
-        <!-- Ask AI / Assistant Section (Error-free Smart Bot) -->
+        <!-- Ask AI / Assistant Section -->
         <section class="card">
             <h2><i class="fa-solid fa-robot"></i> Ask AI about me</h2>
-            <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 10px;">Ask me about myself or my projects here!</p>
+            <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 10px;">എന്നെക്കുറിച്ചോ എൻ്റെ പ്രൊജക്റ്റുകളെക്കുറിച്ചോ ഇതിൽ ചോദിക്കൂ!</p>
 
             <div style="display: flex; gap: 8px; margin-bottom: 10px;">
-                <input type="text" id="ai-input" placeholder="Ask something (e.g., about me, language, college name)..." style="flex: 1; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.9rem;">
+                <input type="text" id="ai-input" placeholder="Ask something (e.g., which college, languages)..." style="flex: 1; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.9rem;">
                 <button onclick="askSmartAI()" style="background-color: #38bdf8; color: #ffffff; border: none; padding: 10px 16px; border-radius: 6px; font-weight: bold; cursor: pointer;">Ask</button>
             </div>
 
@@ -131,7 +131,7 @@
             }
         }
 
-        // 2. Smart AI Assistant Function (100% working on GitHub Pages without API errors)
+        // 2. Smart AI Assistant Function
         function askSmartAI() {
             const input = document.getElementById("ai-input").value.toLowerCase().trim();
             const responseDiv = document.getElementById("ai-response");
@@ -145,10 +145,12 @@
             responseDiv.innerText = "Thinking...";
 
             setTimeout(() => {
-                let reply = "I am Sanoop S R's portfolio assistant. You can ask me about his education, programming languages, or projects!";
+                let reply = "I am Sanoop S R's portfolio assistant. You can ask me about his education, college, programming languages, or projects!";
 
                 if (input.includes("about") || input.includes("who") || input.includes("sanoop")) {
                     reply = "Hi! Sanoop S R is pursuing BCA at CHMM College for Advanced Studies, Varkala. He is passionate about technology and programming.";
+                } else if (input.includes("college") || input.includes("studying") || input.includes("study") || input.includes("education")) {
+                    reply = "Sanoop is studying BCA at CHMM College for Advanced Studies, located in Chavarcode, Varkala.";
                 } else if (input.includes("language") || input.includes("skill") || input.includes("c++") || input.includes("sql")) {
                     reply = "Sanoop has learned programming languages including C, C++, and SQL.";
                 } else if (input.includes("project") || input.includes("work")) {
