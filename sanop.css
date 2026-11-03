@@ -1,6 +1,7 @@
 html {
     scroll-behavior: smooth;
 }
+
 * {
     margin: 0;
     padding: 0;
@@ -26,14 +27,16 @@ header {
     padding-top: 20px;
 }
 
+/* ⬇️ ഇവിടെയാണ് പേരിന്റെ കളർ ഉള്ളത് ⬇️ */
 header h1 {
     font-size: 2.2rem;
-    color: #38bdf8;
+    color: #ffffff; /* ഇവിടെ ഇഷ്ടമുള്ള കളർ കൊടുക്കാം (ഉദാഹരണത്തിന് #ffffff (White), #000000 (Black), #ff3333 (Red)) */
 }
 
 header p {
-    color: #94a3b8;
+    color: #ffffff; /* സബ്‌ ടൈറ്റിൽ വെളുത്ത നിറത്തിൽ വ്യക്തമായി കാണാൻ */
     font-size: 1rem;
+    opacity: 0.9;
 }
 
 .card {
@@ -101,7 +104,7 @@ header p {
 footer {
     text-align: center;
     padding: 10px;
-    color: #64748b;
+    color: #ffffff;
     font-size: 0.85rem;
     margin-top: 20px;
 }
@@ -128,4 +131,3 @@ button {
 button:hover {
     background-color: #0284c7;
 }
-
