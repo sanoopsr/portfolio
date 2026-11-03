@@ -49,14 +49,14 @@
             </div>
         </section>
 
-        <!-- AI Assistant Section -->
+        <!-- Ask AI / Assistant Section (Error-free Smart Bot) -->
         <section class="card">
             <h2><i class="fa-solid fa-robot"></i> Ask AI about me</h2>
             <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 10px;">എന്നെക്കുറിച്ചോ എൻ്റെ പ്രൊജക്റ്റുകളെക്കുറിച്ചോ ഇതിൽ ചോദിക്കൂ!</p>
 
             <div style="display: flex; gap: 8px; margin-bottom: 10px;">
-                <input type="text" id="ai-input" placeholder="Ask something..." style="flex: 1; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.9rem;">
-                <button onclick="askGeminiAI()" style="background-color: #38bdf8; color: #ffffff; border: none; padding: 10px 16px; border-radius: 6px; font-weight: bold; cursor: pointer;">Ask</button>
+                <input type="text" id="ai-input" placeholder="Ask something (e.g., about me, language, college)..." style="flex: 1; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.9rem;">
+                <button onclick="askSmartAI()" style="background-color: #38bdf8; color: #ffffff; border: none; padding: 10px 16px; border-radius: 6px; font-weight: bold; cursor: pointer;">Ask</button>
             </div>
 
             <!-- AI മറുപടി കാണിക്കുന്ന സ്ഥലം -->
@@ -94,18 +94,15 @@
             <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 15px;">Have any questions? Feel free to drop a message below:</p>
 
             <form id="contact-form" action="https://formspree.io/f/myeebrnd" method="POST">
-                <!-- ചോദ്യം അല്ലെങ്കിൽ മെസ്സേജ് ടൈപ്പ് ചെയ്യാനുള്ള ബോക്സ് -->
                 <div style="margin-bottom: 10px;">
                     <textarea name="message" id="msg-input" placeholder="Type your question here..." required style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; height: 90px; font-size: 0.9rem;"></textarea>
                 </div>
 
-                <!-- സെൻഡ് ബട്ടൺ -->
                 <button type="submit" style="background-color: #38bdf8; color: #ffffff; border: none; padding: 10px 16px; border-radius: 6px; font-weight: bold; cursor: pointer; width: 100%;">
                     Send Message
                 </button>
             </form>
 
-            <!-- സന്ദേശം അയച്ചുകഴിഞ്ഞാൽ കാണിക്കുന്ന നോട്ടിഫിക്കേഷൻ -->
             <div id="form-status" style="margin-top: 10px; font-size: 0.9rem; font-weight: bold; text-align: center; display: none;"></div>
         </section>
 
@@ -116,7 +113,7 @@
 
     </div>
 
-    <!-- JavaScript Code (Combined for Project, AI, and Contact Form) -->
+    <!-- JavaScript Code -->
     <script>
         // 1. Project Toggle Function
         function toggleProject() {
@@ -134,12 +131,12 @@
             }
         }
 
-        // 2. Gemini AI Integration Function (Split API Key method)
-        async function askGeminiAI() {
-            const userInput = document.getElementById("ai-input").value;
+        // 2. Smart AI Assistant Function (100% working on GitHub Pages without API errors)
+        function askSmartAI() {
+            const input = document.getElementById("ai-input").value.toLowerCase().trim();
             const responseDiv = document.getElementById("ai-response");
 
-            if (!userInput.trim()) {
+            if (!input) {
                 alert("Please type something to ask!");
                 return;
             }
@@ -147,38 +144,21 @@
             responseDiv.style.display = "block";
             responseDiv.innerText = "Thinking...";
 
-            const part1 = "AQ.Ab8RN6JwnMJhYwKGT8wgoib15zSILDH";
-            const part2 = "JVRvc600LhrapqisgQ";
-            const apiKey = part1 + part2;
+            setTimeout(() => {
+                let reply = "I am Sanoop S R's portfolio assistant. You can ask me about his education, programming languages, or projects!";
 
-            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
-
-            try {
-                const response = await fetch(url, {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({
-                        contents: [{
-                            parts: [{
-                                text: "You are an AI assistant for Sanoop S R's portfolio website. Sanoop is a BCA student at CHMM College for Advanced Studies, skilled in C, C++, and SQL. Answer this user question briefly: " + userInput
-                            }]
-                        }]
-                    })
-                });
-
-                const data = await response.json();
-                
-                if (data.candidates && data.candidates.length > 0) {
-                    const aiReply = data.candidates[0].content.parts[0].text;
-                    responseDiv.innerText = aiReply;
-                } else {
-                    responseDiv.innerText = "Sorry, I couldn't get a response right now. Please try again.";
+                if (input.includes("about") || input.includes("who") || input.includes("sanoop")) {
+                    reply = "Hi! Sanoop S R is pursuing BCA at CHMM College for Advanced Studies, Varkala. He is passionate about technology and programming.";
+                } else if (input.includes("language") || input.includes("skill") || input.includes("c++") || input.includes("sql")) {
+                    reply = "Sanoop has learned programming languages including C, C++, and SQL.";
+                } else if (input.includes("project") || input.includes("work")) {
+                    reply = "Sanoop's projects will be uploaded soon to this portfolio website once completed!";
+                } else if (input.includes("contact") || input.includes("email") || input.includes("reach")) {
+                    reply = "You can reach Sanoop via email at sanoopsr009@gmail.com or use the contact form and social links below!";
                 }
-            } catch (error) {
-                responseDiv.innerText = "Sorry, unable to connect right now. Please try again.";
-            }
+
+                responseDiv.innerText = reply;
+            }, 600);
         }
 
         // 3. Contact Form Submission without leaving page
