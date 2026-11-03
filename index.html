@@ -39,12 +39,14 @@
         <section class="card">
             <div style="display: flex; justify-content: space-between; align-items: center;">
                 <h2><i class="fa-solid fa-laptop-code"></i> My Projects</h2>
-                <!-- Click Button -->
-                <button onclick="toggleProject()" style="background-color: #38bdf8; color: #ffffff; border: none; padding: 6px 14px; border-radius: 6px; font-size: 0.9rem; font-weight: bold; cursor: pointer;">Click</button>
+                <!-- id="project-btn" ഇവിടെ ആഡ് ചെയ്തിട്ടുണ്ട് -->
+                <button id="project-btn" onclick="toggleProject()" style="background-color: #38bdf8; color: #ffffff; border: none; padding: 6px 14px; border-radius: 6px; font-size: 0.9rem; font-weight: bold; cursor: pointer;">Open</button>
             </div>
-            <!-- ഇത് ആദ്യം കാണില്ല, Click ചെയ്യുമ്പോൾ മാത്രം 'A' എന്ന് കാണിക്കും -->
+            
             <div id="project-details" style="display: none; margin-top: 15px; padding-top: 10px; border-top: 1px solid #cbd5e1;">
-                <p style="font-size: 0.9rem; font-weight:  color: black;"> <i>The project has not been done yet. It will be uploaded to the page when it is done.</i> </p>
+                <p style="font-size: 0.9rem; font-weight: normal; color: black;"> 
+                    <i>The project has not been done yet. It will be uploaded to the page when it is done.</i> 
+                </p>
             </div>
         </section>
 
@@ -62,7 +64,7 @@
                     <i class="fa-brands fa-github"></i> GitHub
                 </a>
                 <a href="mailto:sanoopsr009@gmail.com" class="social-btn email">
-                    <i class="fa-solid-envelope"></i> Email
+                    <i class="fa-solid fa-envelope"></i> Email
                 </a>
                 <a href="https://t.me/9744531539" target="_blank" class="social-btn telegram">
                     <i class="fa-brands fa-telegram"></i> Telegram
@@ -80,12 +82,12 @@
 
     </div>
 
-        <!-- JavaScript Code -->
+    <!-- JavaScript Code -->
     <script>
         function toggleProject() {
             var details = document.getElementById("project-details");
             var btn = document.getElementById("project-btn");
-            
+
             if (details.style.display === "none") {
                 details.style.display = "block";
                 btn.innerText = "Close";
@@ -93,7 +95,7 @@
             } else {
                 details.style.display = "none";
                 btn.innerText = "Open";
-                btn.style.backgroundColor = "#22c55e"; // Green color for Open
+                btn.style.backgroundColor = "#38bdf8"; // Default color for Open
             }
         }
     </script>
