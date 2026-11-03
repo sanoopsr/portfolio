@@ -80,16 +80,23 @@
 
     </div>
 
-    <!-- JavaScript കോഡ്: Click ചെയ്യുമ്പോൾ 'A' കാണിക്കാൻ വേണ്ടി -->
+        <!-- JavaScript Code -->
     <script>
         function toggleProject() {
-            var x = document.getElementById("project-details");
-            if (x.style.display === "none") {
-                x.style.display = "block";
+            var details = document.getElementById("project-details");
+            var btn = document.getElementById("project-btn");
+            
+            if (details.style.display === "none") {
+                details.style.display = "block";
+                btn.innerText = "Close";
+                btn.style.backgroundColor = "#ef4444"; // Red color for Close
             } else {
-                x.style.display = "none";
+                details.style.display = "none";
+                btn.innerText = "Open";
+                btn.style.backgroundColor = "#22c55e"; // Green color for Open
             }
         }
     </script>
+
 </body>
 </html>
