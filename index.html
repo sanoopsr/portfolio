@@ -52,7 +52,7 @@
         <!-- Ask AI / Assistant Section -->
         <section class="card">
             <h2><i class="fa-solid fa-robot"></i> Ask AI about me</h2>
-            <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 10px;">Ask me about myself or my projects here!</p>
+            <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 10px;">എന്നെക്കുറിച്ചോ എൻ്റെ പ്രൊജക്റ്റുകളെക്കുറിച്ചോ ഇതിൽ ചോദിക്കൂ!</p>
 
             <div style="display: flex; gap: 8px; margin-bottom: 10px;">
                 <input type="text" id="ai-input" placeholder="Ask something (e.g., which college, languages)..." style="flex: 1; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.9rem;">
@@ -88,15 +88,15 @@
             </div>
         </section>
 
-        <!-- Get in Touch / Message Section (With Email Input Box) -->
+        <!-- Get in Touch / Message Section (With Auto-fill Email Box) -->
         <section class="card">
             <h2><i class="fa-solid fa-envelope"></i> Get in Touch</h2>
             <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 15px;">Have any questions? Feel free to drop a message below:</p>
 
             <form id="contact-form" action="https://formspree.io/f/myeebrnd" method="POST">
-                <!-- സന്ദർശകരുടെ ഇമെയിൽ ടൈപ്പ് ചെയ്യാനുള്ള ബോക്സ് -->
+                <!-- ഓട്ടോ-ഫിൽ സപ്പോർട്ടുള്ള ഇമെയിൽ ബോക്സ് -->
                 <div style="margin-bottom: 10px;">
-                    <input type="email" name="email" placeholder="Your Email Address" required style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.9rem;">
+                    <input type="email" name="email" placeholder="Your Email Address" autocomplete="email" required style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.9rem;">
                 </div>
 
                 <!-- സന്ദേശം ടൈപ്പ് ചെയ്യാനുള്ള ബോക്സ് -->
