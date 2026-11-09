@@ -1,4 +1,4 @@
-/* Core Styling & Dark Violet Gradient Background */
+/* Core Styling & Rich Deep Violet Glowing Background */
 * {
     margin: 0;
     padding: 0;
@@ -8,16 +8,17 @@
 }
 
 body {
-    background: linear-gradient(135deg, #0b0712 0%, #1a0b2e 50%, #2e1065 100%);
+    background: radial-gradient(circle at 50% 0%, #3b0764 0%, #170329 45%, #080110 100%);
     color: #f3e8ff;
     min-height: 100vh;
+    background-attachment: fixed;
 }
 
-/* Sticky Navbar */
+/* Sticky Navbar with Glassmorphism */
 .navbar {
     position: sticky;
     top: 0;
-    background: rgba(15, 7, 26, 0.85);
+    background: rgba(23, 3, 41, 0.85);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(168, 85, 247, 0.2);
     z-index: 1000;
@@ -33,13 +34,21 @@ body {
 }
 
 .logo {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 700;
     color: #ffffff;
     text-decoration: none;
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+.nav-logo-img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #c084fc;
 }
 
 .logo span {
@@ -64,9 +73,9 @@ body {
     color: #c084fc;
 }
 
-/* Hero Section & Profile Image */
+/* Hero Section & Profile Image with Glow */
 .hero {
-    padding: 60px 20px 40px;
+    padding: 70px 20px 45px;
     text-align: center;
 }
 
@@ -80,7 +89,7 @@ body {
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid #c084fc;
-    box-shadow: 0 0 25px rgba(168, 85, 247, 0.5);
+    box-shadow: 0 0 30px rgba(192, 132, 252, 0.6);
 }
 
 .hero h1 {
@@ -104,7 +113,7 @@ body {
     gap: 15px;
 }
 
-/* Main Container & Glassmorphism Cards */
+/* Main Container & Glassmorphic Cards */
 .container {
     max-width: 800px;
     margin: 0 auto;
@@ -112,13 +121,13 @@ body {
 }
 
 .card {
-    background: rgba(30, 11, 56, 0.6);
-    border: 1px solid rgba(168, 85, 247, 0.25);
-    backdrop-filter: blur(10px);
-    border-radius: 14px;
+    background: rgba(45, 12, 79, 0.45);
+    border: 1px solid rgba(192, 132, 252, 0.2);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
     padding: 25px;
     margin-bottom: 25px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .card h2 {
@@ -160,7 +169,7 @@ body {
 .primary-btn {
     background-color: #a855f7;
     color: #ffffff;
-    box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
+    box-shadow: 0 4px 20px rgba(168, 85, 247, 0.5);
 }
 
 .primary-btn:hover {
@@ -195,8 +204,8 @@ body {
 }
 
 .skill-card {
-    background: rgba(168, 85, 247, 0.1);
-    border: 1px solid rgba(168, 85, 247, 0.2);
+    background: rgba(168, 85, 247, 0.12);
+    border: 1px solid rgba(192, 132, 252, 0.25);
     padding: 15px;
     border-radius: 10px;
     text-align: center;
@@ -215,7 +224,7 @@ body {
     display: none;
     margin-top: 15px;
     padding-top: 15px;
-    border-top: 1px solid rgba(168, 85, 247, 0.2);
+    border-top: 1px solid rgba(192, 132, 252, 0.2);
 }
 
 .project-link {
@@ -236,7 +245,7 @@ body {
 
 .cert-card {
     background: rgba(168, 85, 247, 0.08);
-    border: 1px solid rgba(168, 85, 247, 0.2);
+    border: 1px solid rgba(192, 132, 252, 0.2);
     padding: 18px;
     border-radius: 10px;
 }
@@ -267,8 +276,8 @@ body {
 .input-group input, .form-group input, .form-group textarea {
     width: 100%;
     padding: 12px;
-    background: rgba(15, 7, 26, 0.7);
-    border: 1px solid rgba(168, 85, 247, 0.3);
+    background: rgba(23, 3, 41, 0.75);
+    border: 1px solid rgba(192, 132, 252, 0.3);
     border-radius: 8px;
     color: #ffffff;
     font-size: 0.9rem;
@@ -286,13 +295,13 @@ body {
 .input-group input:focus, .form-group input:focus, .form-group textarea:focus {
     outline: none;
     border-color: #c084fc;
-    box-shadow: 0 0 10px rgba(192, 132, 252, 0.3);
+    box-shadow: 0 0 12px rgba(192, 132, 252, 0.4);
 }
 
 .response-box {
     margin-top: 15px;
     padding: 12px;
-    background: rgba(15, 7, 26, 0.9);
+    background: rgba(23, 3, 41, 0.9);
     border-radius: 8px;
     font-size: 0.9rem;
     color: #e9d5ff;
@@ -319,26 +328,27 @@ body {
     align-items: center;
     padding: 12px;
     background: rgba(168, 85, 247, 0.1);
-    border: 1px solid rgba(168, 85, 247, 0.2);
+    border: 1px solid rgba(192, 132, 252, 0.2);
     border-radius: 8px;
     color: #ffffff;
     font-size: 1.2rem;
     text-decoration: none;
-    transition: background 0.3s, color 0.3s;
+    transition: background 0.3s, color 0.3s, transform 0.2s;
 }
 
 .social-btn:hover {
     background: #c084fc;
-    color: #1a0b2e;
+    color: #170329;
+    transform: translateY(-2px);
 }
 
 /* Footer */
 footer {
     text-align: center;
     padding: 20px;
-    background: #08030e;
-    border-top: 1px solid rgba(168, 85, 247, 0.15);
-    color: #a855f7;
+    background: #05000a;
+    border-top: 1px solid rgba(192, 132, 252, 0.15);
+    color: #c084fc;
     font-size: 0.85rem;
 }
 
