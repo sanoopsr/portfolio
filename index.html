@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sanoop S R | Portfolio</title>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <!-- FontAwesome Icons CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- CSS File Link -->
@@ -16,40 +16,57 @@
     <!-- Sticky Navigation Menu -->
     <nav class="navbar">
         <div class="nav-container">
-            <!-- Logo Image Added -->
             <a href="#home" class="logo">
                 <img src="logo.png" alt="Logo" class="nav-logo-img">
-                SANOOP.S.R
+                SANOOP<span>.SR</span>
             </a>
             
-            <!-- Desktop & Mobile Navigation Links -->
             <ul class="nav-links" id="nav-links">
                 <li><a href="#about" onclick="closeMenu()">About</a></li>
-                <li><a href="#languages" onclick="closeMenu()">Learned Languages</a></li>
+                <li><a href="#languages" onclick="closeMenu()">Languages</a></li>
                 <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
                 <li><a href="#education" onclick="closeMenu()">Education</a></li>
                 <li><a href="#ai" onclick="closeMenu()">Ask AI</a></li>
                 <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
             </ul>
 
-            <!-- Hamburger Menu Icon for Mobile -->
             <div class="menu-toggle" id="mobile-menu" onclick="toggleMenu()">
                 <i class="fa-solid fa-bars"></i>
             </div>
         </div>
     </nav>
 
-    <!-- Hero / Header Section -->
-    <header id="home" class="hero">
+    <!-- Hero / Header Section (Warm Orange Theme) -->
+    <header id="home" class="hero scroll-fade">
         <div class="hero-content">
-            <!-- Profile Picture -->
             <div class="profile-img-container">
-                <img src="profile.jpg" alt="Sanoop S R" class="profile-img" onerror="this.src='https://via.placeholder.com/150/8b5cf6/ffffff?text=SANOOP'">
+                <img src="profile.jpg" alt="Sanoop S R" class="profile-img" onerror="this.src='https://via.placeholder.com/150/ff5722/ffffff?text=SANOOP'">
             </div>
-            <h1>Hi, I'm <span class="highlight">Sanoop S R</span></h1>
-            <p>BCA Student & Tech Enthusiast</p>
-            <div class="hero-btns">
-                <a href="#projects" class="btn primary-btn">View Projects</a>
+            <p class="hero-subtitle">Hey, I'm a</p>
+            <h1>Creative <span class="highlight">Developer</span></h1>
+            <p class="hero-desc">Great design and clean code should feel seamless. Building digital products that connect and convert.</p>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-num">#01</span>
+                    <span class="stat-label">Web Development</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">#02</span>
+                    <span class="stat-label">Problem Solving</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">#03</span>
+                    <span class="stat-label">UI/UX Layouts</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">#04</span>
+                    <span class="stat-label">Clean Code</span>
+                </div>
+            </div>
+
+            <div class="hero-btns" style="margin-top: 30px;">
+                <a href="#projects" class="btn primary-btn">View Projects <i class="fa-solid fa-arrow-right"></i></a>
                 <a href="#contact" class="btn secondary-btn">Get In Touch</a>
             </div>
         </div>
@@ -60,31 +77,34 @@
 
         <!-- About Me Section -->
         <section id="about" class="card scroll-fade">
-            <h2><i class="fa-solid fa-user"></i> About Me</h2>
+            <h2><i class="fa-solid fa-user"></i> Behind the Designs</h2>
+            <p class="section-lead">Shaping experiences that make life simpler through intuitive interfaces and robust programming.</p>
             <p>Hi, I am <b>Sanoop S R</b>. Currently, I am pursuing my Bachelor of Computer Applications (BCA) at CHMM College for Advanced Studies, located in Chavarcode, Varkala. I'm passionate about technology, programming, and exploring the world of computers as I build my career in the tech field.</p>
         </section>
 
         <!-- Learned Languages Section -->
         <section id="languages" class="card scroll-fade">
-            <h2><i class="fa-solid fa-code"></i> Learned Languages</h2>
+            <h2><i class="fa-solid fa-code"></i> Learned Languages & Core Skills</h2>
+            <p class="subtitle">Technologies and programming languages I work with:</p>
             <div class="skills-grid">
                 <div class="skill-card">C Programming</div>
                 <div class="skill-card">C++</div>
                 <div class="skill-card">SQL</div>
+                <div class="skill-card">HTML & CSS</div>
             </div>
         </section>
 
         <!-- Project Section -->
         <section id="projects" class="card scroll-fade">
             <div class="card-header">
-                <h2><i class="fa-solid fa-laptop-code"></i> My Projects</h2>
+                <h2><i class="fa-solid fa-laptop-code"></i> Featured Projects</h2>
                 <button id="project-btn" onclick="toggleProject()" class="btn-sm">Open</button>
             </div>
 
             <div id="project-details" class="toggle-content">
-                <p><b>My Portfolio Website:</b> This is the personal portfolio website you are currently viewing, built using HTML, CSS, and JavaScript.</p>
+                <p><b>My Portfolio Website:</b> This is the personal portfolio website you are currently viewing, built with a modern warm-orange aesthetic using HTML, CSS, and JavaScript.</p>
                 <a href="https://github.com/sanoopsr/portfolio" target="_blank" class="project-link">
-                    <i class="fa-brands fa-github"></i> View Source Code on GitHub
+                    <i class="fa-brands fa-github"></i> View Source Code on GitHub <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </div>
         </section>
@@ -92,21 +112,19 @@
         <!-- Education & Academic Records Section -->
         <section id="education" class="card scroll-fade">
             <h2><i class="fa-solid fa-graduation-cap"></i> Education & Academic Records</h2>
-            <p class="subtitle">Here are my academic qualifications and achievements:</p>
+            <p class="subtitle">My academic background and qualifications:</p>
 
             <div class="achievements-grid">
-                <!-- Plus Two Card -->
                 <div class="cert-card">
                     <i class="fa-solid fa-award cert-icon"></i>
                     <h3>Plus Two (Commerce)</h3>
                     <p><b>GHSS Palayamkunnu</b><br>Scored <b>989 / 1200</b> marks (<b>82%</b>)</p>
                 </div>
 
-                <!-- 10th Card -->
                 <div class="cert-card">
                     <i class="fa-solid fa-school cert-icon"></i>
                     <h3>SSLC (10th Standard)</h3>
-                    <p><b>GHSS Palayamkunnu</b></p>
+                    <p><b>GHSS Palayamkunnu</b><br>Completed with <b>72%</b> marks.</p>
                 </div>
             </div>
         </section>
@@ -114,19 +132,20 @@
         <!-- Ask AI / Assistant Section -->
         <section id="ai" class="card scroll-fade">
             <h2><i class="fa-solid fa-robot"></i> Ask AI About Me</h2>
-            <p class="subtitle">Ask anything about me or my projects here!</p>
+            <p class="subtitle">Have any questions about my education or skills? Ask here!</p>
 
             <div class="input-group">
-                <input type="text" id="ai-input" placeholder="Ask something (e.g., marks, languages)...">
+                <input type="text" id="ai-input" placeholder="Ask something (e.g., marks, college)...">
                 <button onclick="askSmartAI()" class="btn primary-btn">Ask</button>
             </div>
 
             <div id="ai-response" class="response-box"></div>
         </section>
 
-        <!-- Follow Us / Contact Links Section -->
+        <!-- Connect With Me Section -->
         <section class="card scroll-fade">
             <h2><i class="fa-solid fa-share-nodes"></i> Connect With Me</h2>
+            <p class="subtitle">Let's stay connected across platforms:</p>
             <div class="social-grid">
                 <a href="https://instagram.com/sanoopeeee" target="_blank" class="social-btn instagram"><i class="fa-brands fa-instagram"></i></a>
                 <a href="https://wa.me/9744531539" target="_blank" class="social-btn whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
@@ -140,16 +159,16 @@
         <!-- Get in Touch / Form Section -->
         <section id="contact" class="card scroll-fade">
             <h2><i class="fa-solid fa-paper-plane"></i> Get in Touch</h2>
-            <p class="subtitle">Have any questions? Feel free to drop a message below:</p>
+            <p class="subtitle">Let's build something meaningful together. Drop a message below:</p>
 
             <form id="contact-form" action="https://formspree.io/f/myeebrnd" method="POST">
                 <div class="form-group">
                     <input type="email" name="email" placeholder="Your Email Address" autocomplete="email" required>
                 </div>
                 <div class="form-group">
-                    <textarea name="message" id="msg-input" placeholder="Type your question or message here..." required></textarea>
+                    <textarea name="message" id="msg-input" placeholder="Type your message here..." required></textarea>
                 </div>
-                <button type="submit" class="btn primary-btn full-width">Send Message</button>
+                <button type="submit" class="btn primary-btn full-width">Send Message <i class="fa-solid fa-arrow-right"></i></button>
             </form>
 
             <div id="form-status" class="status-msg"></div>
@@ -158,13 +177,12 @@
     </main>
 
     <!-- Footer Section -->
-    <footer> <p> <center>Created by sanoop</center> </p>
+    <footer>
         <p>&copy; 2026 Sanoop S R. All Rights Reserved.</p>
     </footer>
 
     <!-- JavaScript Code -->
     <script>
-        // Scroll Fade-in Animation Observer
         document.addEventListener("DOMContentLoaded", function() {
             const observerOptions = {
                 root: null,
@@ -185,7 +203,6 @@
             });
         });
 
-        // Mobile Menu Toggle Functions
         function toggleMenu() {
             var navLinks = document.getElementById("nav-links");
             navLinks.classList.toggle("active");
@@ -207,7 +224,7 @@
             } else {
                 details.style.display = "none";
                 btn.innerText = "Open";
-                btn.style.backgroundColor = "#a855f7"; 
+                btn.style.backgroundColor = "#ff5722"; 
             }
         }
 
@@ -224,20 +241,20 @@
             responseDiv.innerText = "Thinking...";
 
             setTimeout(() => {
-                let reply = "I am Sanoop S R's portfolio assistant. You can ask me about his education, marks, learned languages, or projects!";
+                let reply = "I am Sanoop S R's portfolio assistant. You can ask me about his education, marks, languages, or projects!";
 
                 if (input.includes("about") || input.includes("who") || input.includes("sanoop")) {
-                    reply = "Hi! Sanoop S R is pursuing BCA at CHMM College, Varkala. He completed his Plus Two in Commerce from GHSS Palayamkunnu with 82% (989/1200) and 10th" ;
+                    reply = "Hi! Sanoop S R is pursuing BCA at CHMM College, Varkala. He completed his Plus Two in Commerce from GHSS Palayamkunnu with 82% (989/1200) and 10th with 72%.";
                 } else if (input.includes("mark") || input.includes("plus two") || input.includes("commerce") || input.includes("12th")) {
                     reply = "Sanoop studied Commerce in Plus Two at GHSS Palayamkunnu and scored 989 marks out of 1200, which is 82%.";
                 } else if (input.includes("10th") || input.includes("sslc") || input.includes("school")) {
-                    reply = "Sanoop completed his 10th standard at GHSS Palayamkunnu";
+                    reply = "Sanoop completed his 10th standard at GHSS Palayamkunnu with 72% marks.";
                 } else if (input.includes("language") || input.includes("c programming") || input.includes("c++") || input.includes("sql")) {
                     reply = "Sanoop has learned C Programming, C++, and SQL.";
                 } else if (input.includes("project") || input.includes("work")) {
-                    reply = "Sanoop's portfolio project is now live! You can check it out under the 'My Projects' section.";
+                    reply = "Sanoop's portfolio project is now live! You can check it out under the 'Featured Projects' section.";
                 } else if (input.includes("contact") || input.includes("email") || input.includes("reach")) {
-                    reply = "You can reach Sanoop via email at sanoopsr009@gmail.com or use the contact form and social links below!";
+                    reply = "You can reach Sanoop via email at sanoopsr009@gmail.com or use the contact form below!";
                 }
 
                 responseDiv.innerText = reply;
