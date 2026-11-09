@@ -16,11 +16,15 @@
     <!-- Sticky Navigation Menu -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="#home" class="logo">SANOOP<span>.SR</span></a>
+            <!-- Logo Section -->
+            <a href="#home" class="logo">
+                SANOOP<span>.SR</span>
+            </a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#certificates">Certificates</a></li>
                 <li><a href="#ai">Ask AI</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -30,6 +34,10 @@
     <!-- Hero / Header Section -->
     <header id="home" class="hero">
         <div class="hero-content">
+            <!-- Profile Picture -->
+            <div class="profile-img-container">
+                <img src="profile.jpg" alt="Sanoop S R" class="profile-img" onerror="this.src='https://via.placeholder.com/150/8b5cf6/ffffff?text=SANOOP'">
+            </div>
             <h1>Hi, I'm <span class="highlight">Sanoop S R</span></h1>
             <p>BCA Student & Tech Enthusiast</p>
             <div class="hero-btns">
@@ -73,10 +81,32 @@
             </div>
         </section>
 
+        <!-- Certificates & Achievements Section -->
+        <section id="certificates" class="card">
+            <h2><i class="fa-solid fa-award"></i> Certificates & Achievements</h2>
+            <p class="subtitle">Here are some of my certifications and achievements:</p>
+
+            <div class="achievements-grid">
+                <!-- Certificate Card 1 -->
+                <div class="cert-card">
+                    <i class="fa-solid fa-certificate cert-icon"></i>
+                    <h3>Basic Programming</h3>
+                    <p>Completed training in C and C++ programming fundamentals.</p>
+                </div>
+
+                <!-- Certificate Card 2 -->
+                <div class="cert-card">
+                    <i class="fa-solid fa-trophy cert-icon"></i>
+                    <h3>College Symposium</h3>
+                    <p>Participated in tech events and coding activities at college.</p>
+                </div>
+            </div>
+        </section>
+
         <!-- Ask AI / Assistant Section -->
         <section id="ai" class="card">
             <h2><i class="fa-solid fa-robot"></i> Ask AI About Me</h2>
-            <p class="subtitle">എന്നെക്കുറിച്ചോ എൻ്റെ പ്രൊജക്റ്റുകളെക്കുറിച്ചോ ഇതിൽ ചോദിക്കൂ!</p>
+            <p class="subtitle">Ask anything about me or my projects here!</p>
 
             <div class="input-group">
                 <input type="text" id="ai-input" placeholder="Ask something (e.g., college, languages)...">
@@ -119,7 +149,7 @@
 
     </main>
 
-    <!-- Footer Section (ഏറ്റവും താഴെ) -->
+    <!-- Footer Section -->
     <footer>
         <p>&copy; 2026 Sanoop S R. All Rights Reserved.</p>
     </footer>
@@ -137,7 +167,7 @@
             } else {
                 details.style.display = "none";
                 btn.innerText = "Open";
-                btn.style.backgroundColor = "#38bdf8"; 
+                btn.style.backgroundColor = "#a855f7"; 
             }
         }
 
