@@ -21,14 +21,21 @@
                 <img src="logo.png" alt="Logo" class="nav-logo-img">
                 SANOOP<span>.SR</span>
             </a>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#languages">Learned Languages</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#ai">Ask AI</a></li>
-                <li><a href="#contact">Contact</a></li>
+            
+            <!-- Desktop & Mobile Navigation Links -->
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#about" onclick="closeMenu()">About</a></li>
+                <li><a href="#languages" onclick="closeMenu()">Learned Languages</a></li>
+                <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
+                <li><a href="#education" onclick="closeMenu()">Education</a></li>
+                <li><a href="#ai" onclick="closeMenu()">Ask AI</a></li>
+                <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
             </ul>
+
+            <!-- Hamburger Menu Icon for Mobile -->
+            <div class="menu-toggle" id="mobile-menu" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
         </div>
     </nav>
 
@@ -57,7 +64,7 @@
             <p>Hi, I am <b>Sanoop S R</b>. Currently, I am pursuing my Bachelor of Computer Applications (BCA) at CHMM College for Advanced Studies, located in Chavarcode, Varkala. I'm passionate about technology, programming, and exploring the world of computers as I build my career in the tech field.</p>
         </section>
 
-        <!-- Learned Languages Section (Without icons as requested) -->
+        <!-- Learned Languages Section -->
         <section id="languages" class="card">
             <h2><i class="fa-solid fa-code"></i> Learned Languages</h2>
             <div class="skills-grid">
@@ -157,6 +164,17 @@
 
     <!-- JavaScript Code -->
     <script>
+        // Mobile Menu Toggle Functions
+        function toggleMenu() {
+            var navLinks = document.getElementById("nav-links");
+            navLinks.classList.toggle("active");
+        }
+
+        function closeMenu() {
+            var navLinks = document.getElementById("nav-links");
+            navLinks.classList.remove("active");
+        }
+
         function toggleProject() {
             var details = document.getElementById("project-details");
             var btn = document.getElementById("project-btn");
