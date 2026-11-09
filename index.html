@@ -59,13 +59,13 @@
     <main class="container">
 
         <!-- About Me Section -->
-        <section id="about" class="card">
+        <section id="about" class="card scroll-fade">
             <h2><i class="fa-solid fa-user"></i> About Me</h2>
             <p>Hi, I am <b>Sanoop S R</b>. Currently, I am pursuing my Bachelor of Computer Applications (BCA) at CHMM College for Advanced Studies, located in Chavarcode, Varkala. I'm passionate about technology, programming, and exploring the world of computers as I build my career in the tech field.</p>
         </section>
 
         <!-- Learned Languages Section -->
-        <section id="languages" class="card">
+        <section id="languages" class="card scroll-fade">
             <h2><i class="fa-solid fa-code"></i> Learned Languages</h2>
             <div class="skills-grid">
                 <div class="skill-card">C Programming</div>
@@ -75,7 +75,7 @@
         </section>
 
         <!-- Project Section -->
-        <section id="projects" class="card">
+        <section id="projects" class="card scroll-fade">
             <div class="card-header">
                 <h2><i class="fa-solid fa-laptop-code"></i> My Projects</h2>
                 <button id="project-btn" onclick="toggleProject()" class="btn-sm">Open</button>
@@ -90,7 +90,7 @@
         </section>
 
         <!-- Education & Academic Records Section -->
-        <section id="education" class="card">
+        <section id="education" class="card scroll-fade">
             <h2><i class="fa-solid fa-graduation-cap"></i> Education & Academic Records</h2>
             <p class="subtitle">Here are my academic qualifications and achievements:</p>
 
@@ -112,7 +112,7 @@
         </section>
 
         <!-- Ask AI / Assistant Section -->
-        <section id="ai" class="card">
+        <section id="ai" class="card scroll-fade">
             <h2><i class="fa-solid fa-robot"></i> Ask AI About Me</h2>
             <p class="subtitle">Ask anything about me or my projects here!</p>
 
@@ -125,7 +125,7 @@
         </section>
 
         <!-- Follow Us / Contact Links Section -->
-        <section class="card">
+        <section class="card scroll-fade">
             <h2><i class="fa-solid fa-share-nodes"></i> Connect With Me</h2>
             <div class="social-grid">
                 <a href="https://instagram.com/sanoopeeee" target="_blank" class="social-btn instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -138,7 +138,7 @@
         </section>
 
         <!-- Get in Touch / Form Section -->
-        <section id="contact" class="card">
+        <section id="contact" class="card scroll-fade">
             <h2><i class="fa-solid fa-paper-plane"></i> Get in Touch</h2>
             <p class="subtitle">Have any questions? Feel free to drop a message below:</p>
 
@@ -164,6 +164,27 @@
 
     <!-- JavaScript Code -->
     <script>
+        // Scroll Fade-in Animation Observer
+        document.addEventListener("DOMContentLoaded", function() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('appear');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.scroll-fade').forEach(card => {
+                observer.observe(card);
+            });
+        });
+
         // Mobile Menu Toggle Functions
         function toggleMenu() {
             var navLinks = document.getElementById("nav-links");
