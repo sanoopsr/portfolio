@@ -4,142 +4,143 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sanoop S R | Portfolio</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <!-- FontAwesome Icons CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- CSS File Link -->
     <link rel="stylesheet" href="sanop.css">
 </head>
 <body>
-    <!-- Main Container -->
-    <div class="container">
 
-        <!-- Header Section -->
-        <header>
-            <h1>SANOOP SR</h1>
+    <!-- Sticky Navigation Menu -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">SANOOP<span>.SR</span></a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#ai">Ask AI</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero / Header Section -->
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1>Hi, I'm <span class="highlight">Sanoop S R</span></h1>
             <p>BCA Student & Tech Enthusiast</p>
-        </header>
+            <div class="hero-btns">
+                <a href="#projects" class="btn primary-btn">View Projects</a>
+                <a href="#contact" class="btn secondary-btn">Get In Touch</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="container">
 
         <!-- About Me Section -->
-        <section class="card">
+        <section id="about" class="card">
             <h2><i class="fa-solid fa-user"></i> About Me</h2>
-            <p>Hi, I am Sanoop S R. I'm currently pursuing my Bachelor of Computer Applications (BCA) at CHMM College for Advanced Studies, located in Chavarcode, Varkala. I'm passionate about technology, programming, and exploring the world of computers as I build my career in the tech field.</p>
+            <p>Hi, I am <b>Sanoop S R</b>. I'm currently pursuing my Bachelor of Computer Applications (BCA) at CHMM College for Advanced Studies, located in Chavarcode, Varkala. I'm passionate about technology, programming, and exploring the world of computers as I build my career in the tech field.</p>
         </section>
 
-        <!-- Languages Learned Section -->
-        <section class="card">
-            <h2><i class="fa-solid fa-code"></i> Languages Learned</h2>
-            <div class="skills-list">
-                <span class="skill-tag">C</span>
-                <span class="skill-tag">C++</span>
-                <span class="skill-tag">SQL</span>
+        <!-- Languages Learned / Skills Section -->
+        <section id="skills" class="card">
+            <h2><i class="fa-solid fa-code"></i> Skills & Languages</h2>
+            <div class="skills-grid">
+                <div class="skill-card"><i class="fa-solid fa-c"></i> C</div>
+                <div class="skill-card"><i class="fa-code"></i> C++</div>
+                <div class="skill-card"><i class="fa-database"></i> SQL</div>
             </div>
         </section>
 
-        <!-- Project Section with Toggle Button -->
-        <section class="card">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
+        <!-- Project Section -->
+        <section id="projects" class="card">
+            <div class="card-header">
                 <h2><i class="fa-solid fa-laptop-code"></i> My Projects</h2>
-                <button id="project-btn" onclick="toggleProject()" style="background-color: #38bdf8; color: #ffffff; border: none; padding: 6px 14px; border-radius: 6px; font-size: 0.9rem; font-weight: bold; cursor: pointer;">Open</button>
+                <button id="project-btn" onclick="toggleProject()" class="btn-sm">Open</button>
             </div>
 
-            <div id="project-details" style="display: none; margin-top: 15px; padding-top: 10px; border-top: 1px solid #cbd5e1;">
-                <p style="font-size: 0.9rem; font-weight: normal; color: black;"> 
-                    <i>The project has not been done yet. It will be uploaded to the page when it is done.</i> 
-                </p>
+            <div id="project-details" class="toggle-content">
+                <p><b>My Portfolio Website:</b> This is the personal portfolio website you are currently viewing, built using HTML, CSS, and JavaScript.</p>
+                <a href="https://github.com/sanoopsr/portfolio" target="_blank" class="project-link">
+                    <i class="fa-brands fa-github"></i> View Source Code on GitHub
+                </a>
             </div>
         </section>
 
         <!-- Ask AI / Assistant Section -->
-        <section class="card">
-            <h2><i class="fa-solid fa-robot"></i> Ask AI about me</h2>
-            <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 10px;">Ask me about myself or my projects here!</p>
+        <section id="ai" class="card">
+            <h2><i class="fa-solid fa-robot"></i> Ask AI About Me</h2>
+            <p class="subtitle">എന്നെക്കുറിച്ചോ എൻ്റെ പ്രൊജക്റ്റുകളെക്കുറിച്ചോ ഇതിൽ ചോദിക്കൂ!</p>
 
-            <div style="display: flex; gap: 8px; margin-bottom: 10px;">
-                <input type="text" id="ai-input" placeholder="Ask something (e.g., which college, languages)..." style="flex: 1; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.9rem;">
-                <button onclick="askSmartAI()" style="background-color: #38bdf8; color: #ffffff; border: none; padding: 10px 16px; border-radius: 6px; font-weight: bold; cursor: pointer;">Ask</button>
+            <div class="input-group">
+                <input type="text" id="ai-input" placeholder="Ask something (e.g., college, languages)...">
+                <button onclick="askSmartAI()" class="btn primary-btn">Ask</button>
             </div>
 
-            <!-- AI മറുപടി കാണിക്കുന്ന സ്ഥലം -->
-            <div id="ai-response" style="background-color: #f1f5f9; padding: 10px; border-radius: 6px; font-size: 0.9rem; color: #334155; display: none;"></div>
+            <div id="ai-response" class="response-box"></div>
         </section>
 
-        <!-- Follow Us / Contact Section -->
+        <!-- Follow Us / Contact Links Section -->
         <section class="card">
-            <h2><i class="fa-solid fa-share-nodes"></i> Follow Us / Contact</h2>
-            <div class="social-grid" style="grid-template-columns: repeat(3, 1fr);">
-                <a href="https://instagram.com/sanoopeeee" target="_blank" class="social-btn instagram" title="Instagram">
-                    <i class="fa-brands fa-instagram fa-lg"></i>
-                </a>
-                <a href="https://wa.me/9744531539" target="_blank" class="social-btn whatsapp" title="WhatsApp">
-                    <i class="fa-brands fa-whatsapp fa-lg"></i>
-                </a>
-                <a href="https://github.com/sanoopsr" target="_blank" class="social-btn github" title="GitHub">
-                    <i class="fa-brands fa-github fa-lg"></i>
-                </a>
-                <a href="mailto:sanoopsr009@gmail.com" class="social-btn email" title="Email">
-                    <i class="fa-solid fa-envelope fa-lg"></i>
-                </a>
-                <a href="https://t.me/+919744531539" target="_blank" class="social-btn telegram" title="Telegram">
-                    <i class="fa-brands fa-telegram fa-lg"></i>
-                </a>
-                <a href="https://linkedin.com" target="_blank" class="social-btn linkedin" title="LinkedIn">
-                    <i class="fa-brands fa-linkedin fa-lg"></i>
-                </a>
+            <h2><i class="fa-solid fa-share-nodes"></i> Connect With Me</h2>
+            <div class="social-grid">
+                <a href="https://instagram.com/sanoopeeee" target="_blank" class="social-btn instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://wa.me/9744531539" target="_blank" class="social-btn whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://github.com/sanoopsr" target="_blank" class="social-btn github"><i class="fa-brands fa-github"></i></a>
+                <a href="mailto:sanoopsr009@gmail.com" class="social-btn email"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://t.me/+919744531539" target="_blank" class="social-btn telegram"><i class="fa-brands fa-telegram"></i></a>
+                <a href="https://linkedin.com" target="_blank" class="social-btn linkedin"><i class="fa-brands fa-linkedin"></i></a>
             </div>
         </section>
 
-        <!-- Get in Touch / Message Section (With Auto-fill Email Box) -->
-        <section class="card">
-            <h2><i class="fa-solid fa-envelope"></i> Get in Touch</h2>
-            <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 15px;">Have any questions? Feel free to drop a message below:</p>
+        <!-- Get in Touch / Form Section -->
+        <section id="contact" class="card">
+            <h2><i class="fa-solid fa-paper-plane"></i> Get in Touch</h2>
+            <p class="subtitle">Have any questions? Feel free to drop a message below:</p>
 
             <form id="contact-form" action="https://formspree.io/f/myeebrnd" method="POST">
-                <!-- ഓട്ടോ-ഫിൽ സപ്പോർട്ടുള്ള ഇമെയിൽ ബോക്സ് -->
-                <div style="margin-bottom: 10px;">
-                    <input type="email" name="email" placeholder="Your Email Address" autocomplete="email" required style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.9rem;">
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Your Email Address" autocomplete="email" required>
                 </div>
-
-                <!-- സന്ദേശം ടൈപ്പ് ചെയ്യാനുള്ള ബോക്സ് -->
-                <div style="margin-bottom: 10px;">
-                    <textarea name="message" id="msg-input" placeholder="Type your question or message here..." required style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; height: 90px; font-size: 0.9rem;"></textarea>
+                <div class="form-group">
+                    <textarea name="message" id="msg-input" placeholder="Type your question or message here..." required></textarea>
                 </div>
-
-                <!-- സെൻഡ് ബട്ടൺ -->
-                <button type="submit" style="background-color: #38bdf8; color: #ffffff; border: none; padding: 10px 16px; border-radius: 6px; font-weight: bold; cursor: pointer; width: 100%;">
-                    Send Message
-                </button>
+                <button type="submit" class="btn primary-btn full-width">Send Message</button>
             </form>
 
-            <!-- സന്ദേശം അയച്ചുകഴിഞ്ഞാൽ കാണിക്കുന്ന നോട്ടിഫിക്കേഷൻ -->
-            <div id="form-status" style="margin-top: 10px; font-size: 0.9rem; font-weight: bold; text-align: center; display: none;"></div>
+            <div id="form-status" class="status-msg"></div>
         </section>
 
-        <!-- Footer Section -->
-        <footer>
-            <p>&copy; 2026 Sanoop S R. All Rights Reserved.</p>
-        </footer>
+    </main>
 
-    </div>
+    <!-- Footer Section (ഏറ്റവും താഴെ) -->
+    <footer>
+        <p>&copy; 2026 Sanoop S R. All Rights Reserved.</p>
+    </footer>
 
     <!-- JavaScript Code -->
     <script>
-        // 1. Project Toggle Function
         function toggleProject() {
             var details = document.getElementById("project-details");
             var btn = document.getElementById("project-btn");
 
-            if (details.style.display === "none") {
+            if (details.style.display === "none" || details.style.display === "") {
                 details.style.display = "block";
                 btn.innerText = "Close";
                 btn.style.backgroundColor = "#ef4444"; 
             } else {
                 details.style.display = "none";
                 btn.innerText = "Open";
-                btn.style.backgroundColor = "#22c55e"; 
+                btn.style.backgroundColor = "#38bdf8"; 
             }
         }
 
-        // 2. Smart AI Assistant Function
         function askSmartAI() {
             const input = document.getElementById("ai-input").value.toLowerCase().trim();
             const responseDiv = document.getElementById("ai-response");
@@ -162,7 +163,7 @@
                 } else if (input.includes("language") || input.includes("skill") || input.includes("c++") || input.includes("sql")) {
                     reply = "Sanoop has learned programming languages including C, C++, and SQL.";
                 } else if (input.includes("project") || input.includes("work")) {
-                    reply = "Sanoop's projects will be uploaded soon to this portfolio website once completed!";
+                    reply = "Sanoop's portfolio project is now live! You can check it out under the 'My Projects' section.";
                 } else if (input.includes("contact") || input.includes("email") || input.includes("reach")) {
                     reply = "You can reach Sanoop via email at sanoopsr009@gmail.com or use the contact form and social links below!";
                 }
@@ -171,9 +172,7 @@
             }, 600);
         }
 
-        // 3. Contact Form Submission without leaving page
         var form = document.getElementById("contact-form");
-
         async function handleSubmit(event) {
             event.preventDefault();
             var status = document.getElementById("form-status");
@@ -182,32 +181,25 @@
             fetch(event.target.action, {
                 method: form.method,
                 body: data,
-                headers: {
-                    'Accept': 'application/json'
-                }
+                headers: { 'Accept': 'application/json' }
             }).then(response => {
                 if (response.ok) {
                     status.style.display = "block";
-                    status.style.color = "#22c55e";
+                    status.style.color = "#4ade80";
                     status.innerText = "Message sent successfully!";
                     form.reset();
-                    setTimeout(() => {
-                        status.style.display = "none";
-                    }, 4000);
+                    setTimeout(() => { status.style.display = "none"; }, 4000);
                 } else {
-                    response.json().then(data => {
-                        status.style.display = "block";
-                        status.style.color = "#ef4444";
-                        status.innerText = "Oops! There was a problem submitting your form";
-                    });
+                    status.style.display = "block";
+                    status.style.color = "#f87171";
+                    status.innerText = "Oops! There was a problem submitting your form";
                 }
             }).catch(error => {
                 status.style.display = "block";
-                status.style.color = "#ef4444";
+                status.style.color = "#f87171";
                 status.innerText = "Oops! There was a problem submitting your form";
             });
         }
-
         form.addEventListener("submit", handleSubmit);
     </script>
 </body>
