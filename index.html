@@ -23,9 +23,9 @@
             </a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
+                <li><a href="#languages">Learned Languages</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#certificates">Certificates</a></li>
+                <li><a href="#education">Education</a></li>
                 <li><a href="#ai">Ask AI</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -54,16 +54,16 @@
         <!-- About Me Section -->
         <section id="about" class="card">
             <h2><i class="fa-solid fa-user"></i> About Me</h2>
-            <p>Hi, I am <b>Sanoop S R</b>. I'm currently pursuing my Bachelor of Computer Applications (BCA) at CHMM College for Advanced Studies, located in Chavarcode, Varkala. I'm passionate about technology, programming, and exploring the world of computers as I build my career in the tech field.</p>
+            <p>Hi, I am <b>Sanoop S R</b>. Currently, I am pursuing my Bachelor of Computer Applications (BCA) at CHMM College for Advanced Studies, located in Chavarcode, Varkala. I'm passionate about technology, programming, and exploring the world of computers as I build my career in the tech field.</p>
         </section>
 
-        <!-- Languages Learned / Skills Section -->
-        <section id="skills" class="card">
-            <h2><i class="fa-solid fa-code"></i> Skills & Languages</h2>
+        <!-- Learned Languages Section (Without icons as requested) -->
+        <section id="languages" class="card">
+            <h2><i class="fa-solid fa-code"></i> Learned Languages</h2>
             <div class="skills-grid">
-                <div class="skill-card"><i class="fa-solid fa-c"></i> C</div>
-                <div class="skill-card"><i class="fa-code"></i> C++</div>
-                <div class="skill-card"><i class="fa-database"></i> SQL</div>
+                <div class="skill-card">C Programming</div>
+                <div class="skill-card">C++</div>
+                <div class="skill-card">SQL</div>
             </div>
         </section>
 
@@ -82,24 +82,24 @@
             </div>
         </section>
 
-        <!-- Certificates & Achievements Section -->
-        <section id="certificates" class="card">
-            <h2><i class="fa-solid fa-award"></i> Certificates & Achievements</h2>
-            <p class="subtitle">Here are some of my certifications and achievements:</p>
+        <!-- Education & Academic Records Section -->
+        <section id="education" class="card">
+            <h2><i class="fa-solid fa-graduation-cap"></i> Education & Academic Records</h2>
+            <p class="subtitle">Here are my academic qualifications and achievements:</p>
 
             <div class="achievements-grid">
-                <!-- Certificate Card 1 -->
+                <!-- Plus Two Card -->
                 <div class="cert-card">
-                    <i class="fa-solid fa-certificate cert-icon"></i>
-                    <h3>Basic Programming</h3>
-                    <p>Completed training in C and C++ programming fundamentals.</p>
+                    <i class="fa-solid fa-award cert-icon"></i>
+                    <h3>Plus Two (Commerce)</h3>
+                    <p><b>GHSS Palayamkunnu</b><br>Scored <b>989 / 1200</b> marks (<b>82%</b>)</p>
                 </div>
 
-                <!-- Certificate Card 2 -->
+                <!-- 10th Card -->
                 <div class="cert-card">
-                    <i class="fa-solid fa-trophy cert-icon"></i>
-                    <h3>College Symposium</h3>
-                    <p>Participated in tech events and coding activities at college.</p>
+                    <i class="fa-solid fa-school cert-icon"></i>
+                    <h3>SSLC (10th Standard)</h3>
+                    <p><b>GHSS Palayamkunnu</b><br>Completed with <b>72%</b> marks.</p>
                 </div>
             </div>
         </section>
@@ -110,7 +110,7 @@
             <p class="subtitle">Ask anything about me or my projects here!</p>
 
             <div class="input-group">
-                <input type="text" id="ai-input" placeholder="Ask something (e.g., college, languages)...">
+                <input type="text" id="ai-input" placeholder="Ask something (e.g., marks, languages)...">
                 <button onclick="askSmartAI()" class="btn primary-btn">Ask</button>
             </div>
 
@@ -185,14 +185,16 @@
             responseDiv.innerText = "Thinking...";
 
             setTimeout(() => {
-                let reply = "I am Sanoop S R's portfolio assistant. You can ask me about his education, college, programming languages, or projects!";
+                let reply = "I am Sanoop S R's portfolio assistant. You can ask me about his education, marks, learned languages, or projects!";
 
                 if (input.includes("about") || input.includes("who") || input.includes("sanoop")) {
-                    reply = "Hi! Sanoop S R is pursuing BCA at CHMM College for Advanced Studies, Varkala. He is passionate about technology and programming.";
-                } else if (input.includes("college") || input.includes("studying") || input.includes("study") || input.includes("education")) {
-                    reply = "Sanoop is studying BCA at CHMM College for Advanced Studies, located in Chavarcode, Varkala.";
-                } else if (input.includes("language") || input.includes("skill") || input.includes("c++") || input.includes("sql")) {
-                    reply = "Sanoop has learned programming languages including C, C++, and SQL.";
+                    reply = "Hi! Sanoop S R is pursuing BCA at CHMM College, Varkala. He completed his Plus Two in Commerce from GHSS Palayamkunnu with 82% (989/1200) and 10th with 72%.";
+                } else if (input.includes("mark") || input.includes("plus two") || input.includes("commerce") || input.includes("12th")) {
+                    reply = "Sanoop studied Commerce in Plus Two at GHSS Palayamkunnu and scored 989 marks out of 1200, which is 82%.";
+                } else if (input.includes("10th") || input.includes("sslc") || input.includes("school")) {
+                    reply = "Sanoop completed his 10th standard at GHSS Palayamkunnu with 72% marks.";
+                } else if (input.includes("language") || input.includes("c programming") || input.includes("c++") || input.includes("sql")) {
+                    reply = "Sanoop has learned C Programming, C++, and SQL.";
                 } else if (input.includes("project") || input.includes("work")) {
                     reply = "Sanoop's portfolio project is now live! You can check it out under the 'My Projects' section.";
                 } else if (input.includes("contact") || input.includes("email") || input.includes("reach")) {
