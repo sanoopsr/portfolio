@@ -7,10 +7,12 @@
     scroll-behavior: smooth;
 }
 
-body {
-    background: radial-gradient(circle at 50% 0%, #3b0764 0%, #170329 45%, #080110 100%);
+html, body {
+    background-color: #080110;
+    background-image: radial-gradient(circle at 50% 0%, #3b0764 0%, #170329 45%, #080110 100%);
     color: #f3e8ff;
     min-height: 100vh;
+    overflow-x: hidden;
     background-attachment: fixed;
 }
 
